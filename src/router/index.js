@@ -10,23 +10,42 @@ import Post from '@/components/post/Post.vue'
 import Posts from '@/components/post/Posts.vue'
 import NewPost from '@/components/post/New.vue'
 import EditPost from '@/components/post/Edit.vue'
+import DeletePost from '@/components/post/Delete.vue'
 
 
 Vue.use(Router)
 
-export default new Router({
-
+const router = new Router({
   mode: 'history',
   routes: [
     { path: '/', name: 'Home', component: Home },
-    { path: '/login', name: 'Login', component: Login },
-    { path: '/logout', name: 'Logout', component: Logout },
     { path: '/post', name: 'Post', component: Post },
     { path: '/about', name: 'About', component: About },
     { path: '/contact', name: 'Contact', component: Contact },
 
-    { path: '/admin/posts', name: 'Posts', component: Posts },
-    { path: '/admin/posts/new', name: 'NewPost', component: NewPost },
-    { path: '/admin/posts/edit/:id', name: 'EditPost', component: EditPost }
+    { path: '/admin/posts', name: 'Posts', component: Posts, meta: { requiresAuth: true} },
+    { path: '/admin/posts/new', name: 'NewPost', component: NewPost, meta: { requiresAuth: true} },
+    { path: '/admin/posts/edit/:id', name: 'EditPost', component: EditPost, meta: { requiresAuth: true} },
+    { path: '/admin/posts/delete/:id', name: 'DeletePost', component: DeletePost, meta: { requiresAuth: true} }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    const user = firebase.auth().currentUser;
+    if (!user) {
+      next({
+        path: '/',
+        query: {
+          redirect: to.fullPath,
+        },
+      });
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
+})
+
+export default router
