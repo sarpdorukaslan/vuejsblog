@@ -6,12 +6,17 @@
 
 <script>
   export default {
-      created: {
-        firebase.database().ref('posts/' + null).set({
+      data() {
+          return {
+            msg: ''
+          }
+      },
+      created (){
+        firebase.database().ref().child('posts').push({
           title: 'İlk Başlık',
           content: 'İlk Content',
           post_picture : 'http://balabla.com'
-        })
-      },
+        }).key
+      }
   }
 </script>

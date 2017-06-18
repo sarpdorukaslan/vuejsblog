@@ -31,6 +31,7 @@ npm test
 - Linked bootstrap 3 CDN path in index.html
 - Created header.vue and added as app-header component in App.vue
 - Created routes
+- Created login page
 
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
