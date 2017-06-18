@@ -17,7 +17,7 @@
           <router-link to="/contact" activeClass="active" tag="li"><a>Contact</a></router-link>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../navbar/">Default</a></li>
+          <router-link to="/login" activeClass="active" tag="li"><a>Login</a></router-link>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
