@@ -3,8 +3,6 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import About from '@/components/About'
 import Contact from '@/components/Contact'
-import Login from '@/components/Login'
-import Logout from '@/components/Logout'
 
 import Post from '@/components/post/Post.vue'
 import Posts from '@/components/post/Posts.vue'
