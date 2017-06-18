@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import About from '@/components/About'
 import Contact from '@/components/Contact'
 import Login from '@/components/Login'
+import Logout from '@/components/Logout'
 
 import Post from '@/components/post/Post.vue'
 import Posts from '@/components/post/Posts.vue'
@@ -18,6 +19,7 @@ export default new Router({
   routes: [
     { path: '/', name: 'Home', component: Home },
     { path: '/login', name: 'Login', component: Login },
+    { path: '/logout', name: 'Logout', component: Logout },
     { path: '/post', name: 'Post', component: Post },
     { path: '/about', name: 'About', component: About },
     { path: '/contact', name: 'Contact', component: Contact },
