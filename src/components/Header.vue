@@ -12,9 +12,9 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <router-link to="/" activeClass="active" tag="li" exact><a>Home</a></router-link>
+          <router-link to="/about" activeClass="active" tag="li"><a>About</a></router-link>
+          <router-link to="/contact" activeClass="active" tag="li"><a>Contact</a></router-link>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="../navbar/">Default</a></li>
