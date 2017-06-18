@@ -15,6 +15,7 @@ import EditPost from '@/components/post/Edit.vue'
 Vue.use(Router)
 
 export default new Router({
+
   mode: 'history',
   routes: [
     { path: '/', name: 'Home', component: Home },
