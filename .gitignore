@@ -6,3 +6,12 @@ yarn-debug.log*
 yarn-error.log*
 test/e2e/reports
 selenium-debug.log
+.idea
+.idea/blog.iml
+.idea/dictionaries/
+.idea/encodings.xml
+.idea/jsLibraryMappings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/sonarlint/
+.idea/workspace.xml
