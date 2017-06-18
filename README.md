@@ -24,4 +24,12 @@ npm run e2e
 npm test
 ```
 
+# Steps
+
+- Created new firebase project
+- Added firebase injection codes (js) in index.html
+- Linked bootstrap 3 CDN path in index.html
+- Created header.vue and added as app-header component in App.vue
+
+
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
