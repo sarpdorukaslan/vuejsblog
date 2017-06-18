@@ -2,7 +2,7 @@
   <div>
     <ul>
       <li v-for="post in posts">
-          {{post.title}}
+          {{ post.title }}
       </li>
     </ul>
 
@@ -12,7 +12,7 @@
   export default {
     data()
     {
-      return { posts : {}}
+      return { posts : {} }
     },
     created() {
       let _this = this

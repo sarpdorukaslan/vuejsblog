@@ -32,7 +32,7 @@
         }).key
         this.title = ''
         this.content = ''
-        alert('Eklendi!!!')
+        this.$router.push('/admin/posts')
       }
     }
   }
