@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img :src="post.post_picture" :alt="post.title">
+    <img :src="post.post_picture" class="img-responsive" :alt="post.title">
     <h1>{{ post.title }}</h1>
     <p v-html="post.content"></p>
   </div>

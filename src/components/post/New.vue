@@ -17,7 +17,6 @@
         <label for="content">Content</label>
         <quill-editor id="content" v-model="post.content"></quill-editor>
       </div>
-      {{ post }}
       <button class="btn btn-primary">Save Post</button>
     </form>
   </div>

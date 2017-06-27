@@ -18,7 +18,6 @@ const router = new Router({
   mode: 'history',
   routes: [
     { path: '/', name: 'Home', component: Home },
-    { path: '/post', name: 'Post', component: Post },
     { path: '/about', name: 'About', component: About },
     { path: '/contact', name: 'Contact', component: Contact },
     { path: '/post/:id', name: 'Post', component: Post },

@@ -1,8 +1,10 @@
 <template>
   <div>
-    <div v-for="post in posts">
-      <img :src="post.post_picture" :alt="post.title">
-      <h1>{{ post.title }}</h1>
+    <div v-for="( post, postId ) in posts">
+      <img :src="post.post_picture" class="img-rounded" width="100%" :alt="post.title">
+      <router-link :to="{name: 'Post', params: {id: postId} }">
+        <h1>{{ post.title }}</h1>
+      </router-link>
       <p v-html="post.content"></p>
     </div>
   </div>
@@ -11,7 +13,7 @@
   export default {
     data()
     {
-      return {posts: {}}
+      return {posts: []}
     },
     created() {
       let _this = this

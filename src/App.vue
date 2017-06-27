@@ -1,27 +1,34 @@
 <template>
   <div id="app">
     <app-header></app-header>
-    <router-view></router-view>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <router-view></router-view>
+        </div>
+      </div>
+    </div>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
   import Header from './components/Header.vue'
+  import Footer from './components/Footer.vue'
 
   export default {
     name: 'app',
     components: {
-      appHeader: Header
+      appHeader: Header,
+      appFooter: Footer
     }
   }
 </script>
 
-<style>
+<style scoped>
+  @import "assets/css/clean-blog.min.css";
+
   #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
-    margin-top: 60px;
+
   }
 </style>
