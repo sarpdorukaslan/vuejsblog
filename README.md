@@ -32,6 +32,7 @@ npm test
 - Created header.vue and added as app-header component in App.vue
 - Created routes
 - Created login page
+- npm install vuefire --save
 
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

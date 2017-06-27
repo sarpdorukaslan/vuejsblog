@@ -10,7 +10,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Sarp Doruk ASLAN Blog</a>
+          <router-link to="/"><a class="navbar-brand">Vue Blog</a></router-link>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -94,6 +94,7 @@
         firebase.auth().signOut().then(function () {
           $("#loginModal").modal("hide")
           _this.isLogged = false
+          _this.$router.push('/')
         }).catch(function (error) {
           console.log('Sign out error : ' + error)
         });
