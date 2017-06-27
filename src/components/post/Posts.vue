@@ -1,6 +1,9 @@
 <template>
   <div>
     <h1>All Admin Posts</h1>
+    <router-link :to="{ name: 'NewPost' }">
+      <button class="btn btn-primary">New Post</button>
+    </router-link>
     <table class="table table-striped">
       <thead>
       <tr>
@@ -10,8 +13,17 @@
       </thead>
       <tbody>
       <tr v-for=" (post, postId ) in posts">
-        <td><a :href="'/post/' + postId">{{ post.title }}</a></td>
-        <td><a href="#"><i class="fa fa-trash-o"></i></a></td>
+        <td>
+          <router-link :to="{name: 'Post', params: {id: postId} }">{{ post.title }}</router-link>
+        </td>
+        <td>
+          <router-link :to="{name: 'EditPost', params: {id: postId} }">
+            <i class="fa fa-edit"></i>
+          </router-link>
+          <a href="#">
+            <i class="fa fa-trash-o" @click="deletePost(postId)"></i>
+          </a>
+        </td>
       </tr>
       </tbody>
     </table>
@@ -21,16 +33,29 @@
   export default {
     data()
     {
-      return { posts : {} }
+      return {posts: []}
     },
     created() {
       let _this = this
-      firebase.database().ref('/posts').on("value", function(snapshot) {
+      firebase.database().ref('/posts').on("value", function (snapshot) {
         _this.posts = snapshot.val()
-        console.log(snapshot.val())
       }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
-      });
+      })
+    },
+    methods: {
+      deletePost(id) {
+        let _this = this
+        firebase.database().ref('/posts/' + id).remove().then(function (snapshot) {
+          _this.$swal('Deleted the post')
+        })
+      }
     }
   }
 </script>
+
+<style>
+  i {
+    cursor: pointer;
+  }
+</style>

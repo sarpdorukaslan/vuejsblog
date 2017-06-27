@@ -30,21 +30,20 @@ const router = new Router({
   ]
 })
 
+// resource -> https://router.vuejs.org/en/advanced/meta.html
+
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    const user = firebase.auth().currentUser;
+    const user = firebase.auth().currentUser
     if (!user) {
       next({
-        path: '/',
-        query: {
-          redirect: to.fullPath,
-        },
+        path: '/'
       });
     } else {
-      next();
+      next()
     }
   } else {
-    next();
+    next()
   }
 })
 
