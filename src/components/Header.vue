@@ -80,17 +80,14 @@
         firebase.auth().onAuthStateChanged(function (user) {
           if (user) {
             _this.isLogged = true
-            console.log('kullanıcı var')
           } else {
             _this.isLogged = false
-            console.log('kullanıcı yok')
           }
         });
     },
     methods: {
       signOut() {
         let _this = this
-        console.log("deneme")
         firebase.auth().signOut().then(function () {
           $("#loginModal").modal("hide")
           _this.isLogged = false
@@ -114,7 +111,6 @@
           .then(function (user) {
             $("#loginModal").modal("hide")
             _this.isLogged = true
-            console.log(user)
           });
       }
     }
