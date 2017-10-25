@@ -130,6 +130,7 @@
           .then(function (user) {
             $("#loginModal").modal("hide")
             _this.isLogged = true
+
           });
       }
     }
